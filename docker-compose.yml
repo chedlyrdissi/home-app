@@ -1,0 +1,51 @@
+version: "3.9"
+
+services:
+  ingress:
+    build:
+      context: ./ingress
+    volumes:
+      - ingress_logs:/var/log/nginx
+    ports:
+      - "127.0.0.1:80:80"
+    networks:
+      - homenetwork
+
+  personalpage:
+    build:
+      context: ./personalpage
+    volumes:
+      - personalpage_logs:/var/log/nginx
+    networks:
+      - homenetwork
+
+  fallen:
+    build:
+      context: ./Fallen
+    volumes:
+      - fallen_logs:/var/log/nginx
+    environment:
+      - API_URL="http://fallen-api"
+    networks:
+      - homenetwork
+
+  fallen-api:
+    build:
+      context: ./fallen-api
+    volumes:
+      - fallen_data:/app/data
+    networks:
+      - homenetwork
+
+volumes:
+  ingress_logs:
+    name: "ingress_logs"
+  personalpage_logs:
+    name: "personalpage_logs"
+  fallen_logs:
+    name: "fallen_logs"
+  fallen_data:
+    name: "fallen_data"
+
+networks:
+  homenetwork:
