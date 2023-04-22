@@ -1,0 +1,14 @@
+[submodule "Fallen"]
+	path = Fallen
+	url = git@github.com:chedlyrdissi/Fallen.git
+	branch = master
+[submodule "fallen-api"]
+	path = fallen-api
+	url = git@github.com:chedlyrdissi/Fallen.git
+	branch = api
+[submodule "personalpage"]
+	path = personalpage
+	url = git@github.com:chedlyrdissi/personalpage.git
+[submodule "ingress"]
+	path = ingress
+	url = git@github.com:chedlyrdissi/home-app-ingress.git

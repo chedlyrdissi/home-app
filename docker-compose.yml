@@ -24,8 +24,6 @@ services:
       context: ./Fallen
     volumes:
       - fallen_logs:/var/log/nginx
-    environment:
-      - API_URL="http://fallen-api"
     networks:
       - homenetwork
 
