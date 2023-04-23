@@ -12,7 +12,8 @@ docker-compose down --rmi local
 ```
 
 ## Submodules
-### Update
+### Init
 ```sh
-git submodiles update
+git submodule update --init --recursive
+git submodule update --remote
 ```
